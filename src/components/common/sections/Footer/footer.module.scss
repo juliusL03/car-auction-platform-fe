@@ -1,0 +1,15 @@
+.container {
+ @apply bg-[#C9CACE] mt-2 ;
+}
+
+.navWrapper {
+ @apply max-w-6xl mx-auto;
+}
+
+.navContent {
+ @apply flex justify-around text-base pb-6;
+}
+
+.copyright {
+ @apply bg-white text-center font-semibold p-2 text-[16px] font-normal;
+}

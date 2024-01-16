@@ -1,0 +1,13 @@
+.container {
+ @apply flex flex-row w-full border-gray-300 border-solid w-[180px] h-12 justify-center items-center;
+}
+
+.input {
+@apply w-[124px] h-8 border-none text-[24px] text-center;
+
+
+}
+
+.incrementBtn {
+ @apply flex justify-center bg-orange-300 hover:bg-orange-600 w-[30px] h-8 text-white mx-1 rounded-3xl;
+}

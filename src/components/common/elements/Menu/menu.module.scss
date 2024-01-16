@@ -1,0 +1,39 @@
+.menu {
+ @apply items-center justify-between w-full flex w-auto;
+}
+
+.ul {
+ @apply flex flex-col list-none font-medium border rounded-lg md:space-x-8 md:flex-row md:m-0 md:border-0;
+}
+
+.li {
+ @apply block text-[18px] text-gray-900 sm:text-center rounded hover:text-red-500 md:bg-transparent md:text-gray-900 md:p-0;
+}
+
+.megaButton {
+ @apply flex items-center cursor-pointer justify-between w-full py-0 px-3 font-medium text-gray-900 border-b border-gray-100 md:w-auto hover:bg-gray-50 hover:bg-transparent md:border-0 hover:text-blue-600 md:p-0;
+}
+
+.megaDropDown {
+ @apply absolute grid w-auto grid-cols-2 text-sm bg-white border border-gray-100 rounded-lg shadow-md md:grid-cols-3;
+
+ .megaDiv {
+  @apply pt-4 text-gray-900 md:pb-4;
+ }
+ 
+ .megaUl {
+  @apply space-y-4 list-none;
+ }
+ 
+ .megaA {
+  @apply flex items-center hover:text-blue-600;
+ } 
+}
+
+.megaSpan {
+ @apply sr-only;
+}
+
+.rel {
+ @apply relative;
+}

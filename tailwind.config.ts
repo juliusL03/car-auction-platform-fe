@@ -1,20 +1,37 @@
-import type { Config } from 'tailwindcss'
+/* eslint-disable @typescript-eslint/no-var-requires */
+/** @type {import('tailwindcss').Config} */
 
-const config: Config = {
-  content: [
-    './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/app/**/*.{js,ts,jsx,tsx,mdx}',
-  ],
-  theme: {
-    extend: {
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-      },
-    },
-  },
-  plugins: [],
+const colors = require('tailwindcss/colors')
+
+module.exports = {
+	mode: 'jit',
+	content: ['./src/pages/**/*.{ts,tsx}','./src/components/**/*.{ts,tsx}','./src/views/**/*.{ts,tsx}'],
+	purge: ['./src/pages/**/*.{ts,tsx}', './src/components/**/*.{ts,tsx}', './src/views/**/*.{ts,tsx}'],
+	theme: {
+		screens: {
+			sm: '320px',
+			md: '768px',
+			lg: '976px',
+			xl: '1440px'
+		},
+		colors: {
+			purple: colors.purple,
+			primary: '#7F56D9',
+			'primary-darker': '#6941C6',
+			blue: colors.blue,
+			white: colors.white,
+			gray: colors.gray,
+			green: colors.green,
+			red: colors.red,
+			yellow: colors.yellow,
+			sky: colors.sky,
+			transparent: colors.transparent,
+			orange: colors.orange
+		},
+		fontFamily: {
+			primary: ['Inter', 'sans-serif']
+		},
+		extend: {}
+	},
+	plugins: []
 }
-export default config

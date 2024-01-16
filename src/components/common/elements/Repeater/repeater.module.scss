@@ -1,0 +1,11 @@
+.item {
+	@apply flex flex-row justify-stretch items-center border-b;
+}
+
+.closeButton {
+	@apply my-5;
+}
+
+.addButton {
+	@apply self-start my-3;
+}

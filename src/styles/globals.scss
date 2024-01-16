@@ -1,0 +1,103 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import './_mixins';
+
+* {
+	-moz-user-select: none;
+	-khtml-user-select: none;
+	-webkit-user-select: none;
+	user-select: none;
+}
+
+*::-webkit-scrollbar {
+	width: 0.75em;
+}
+
+*::-webkit-scrollbar-track {
+	box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+*::-webkit-scrollbar-thumb {
+	@apply border-2 border-gray-50 bg-gray-400;
+}
+
+.ant-layout {
+	background: white;
+}
+
+a {
+	@apply text-primary;
+
+	&:hover {
+		@apply text-primary;
+	}
+}
+
+a.inline {
+	@apply underline;
+
+	&:hover {
+		@apply text-gray-700;
+	}
+}
+
+code {
+	@apply bg-gray-100 px-2 py-1 rounded-md;
+}
+
+.ant-form-item {
+	@apply p-0 mb-2;
+
+	.ant-form-item-label {
+		@apply p-0 m-0;
+	}
+}
+
+.ant-btn-primary {
+	@apply bg-[#7F56D9];
+
+	&:hover {
+		background: #8861db !important;
+	}
+}
+
+.ant-menu-submenu-title,
+.ant-menu-title-content,
+.ant-menu-title-content a {
+	@apply text-[#344054];
+}
+
+.ant-input {
+	@apply bg-transparent;
+}
+
+.react-datepicker-wrapper {
+	@apply w-full;
+}
+
+.ant-segmented.channel-filter {
+	@apply bg-white mb-2;
+
+	.ant-segmented-group {
+		.ant-segmented-item {
+			@apply border-none shadow-none rounded-lg;
+
+			&.ant-segmented-item-selected {
+				@apply bg-gray-200 rounded-lg;
+			}
+
+			.ant-segmented-item-label {
+			}
+		}
+	}
+}
+
+.ant-table-column-sorter .anticon {
+	display: none;
+}
+.ant-input-prefix {
+	margin-inline-end: 12px !important;
+}
+

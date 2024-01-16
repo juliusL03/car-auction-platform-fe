@@ -1,0 +1,22 @@
+@import '../../../../styles/_mixins';
+
+.label {
+	@apply block text-sm font-medium text-gray-900 dark:text-white ml-2;
+	@include hasError();
+}
+
+.inputContainer {
+	@apply flex items-center;
+
+	.input {
+		@apply bg-gray-50 border border-gray-300 rounded text-sm;
+		@apply focus:ring-[none] checked:bg-[#7F56D9] checked:border checked:border-solid checked:border-[#7F56D9];
+		@include elementStatus();
+	}
+
+	.errorMessage {
+		@apply absolute;
+		@apply text-sm;
+		@include hasError();
+	}
+}

@@ -1,3 +1,53 @@
 {
-  "extends": "next/core-web-vitals"
+	"parser": "@typescript-eslint/parser",
+	"plugins": ["@typescript-eslint", "import"],
+	"extends": [
+		"next/core-web-vitals",
+		"plugin:sonarjs/recommended",
+		"plugin:@typescript-eslint/recommended"
+	],
+	"rules": {
+		"quotes": ["error", "single"],
+		"object-curly-spacing": "error",
+		"semi": ["error", "never"],
+		"jsx-quotes": ["error", "prefer-double"],
+		"no-console": "warn",
+		"react/display-name": "off",
+		"sonarjs/cognitive-complexity": "error",
+		"sonarjs/no-identical-expressions": "error",
+		"indent": [
+			"error",
+			"tab",
+			{
+				"SwitchCase": 1
+			}
+		],
+		"no-mixed-spaces-and-tabs": ["error"],
+		"no-unused-vars": "off",
+		"@typescript-eslint/no-unused-vars": "error",
+		"@typescript-eslint/no-explicit-any": "off",
+  "@next/next/no-document-import-in-page": "off",
+		"import/no-unresolved": [2, { "ignore": ["@\/"] }],
+		"sort-imports": [
+			"error",
+			{
+				"ignoreCase": true,
+				"ignoreDeclarationSort": true
+			}
+		],
+		"import/order": [
+			1,
+			{
+				"groups": ["external", "builtin", "internal", "parent", "sibling", "index"],
+				"pathGroups": [
+					{
+						"pattern": "@/**",
+						"group": "internal",
+						"position": "before"
+					}
+				],
+				"newlines-between": "always"
+			}
+		]
+	}
 }

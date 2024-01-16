@@ -1,0 +1,74 @@
+@import '../../../../styles/mixins';
+
+.label {
+	@apply block text-sm font-medium text-gray-900 dark:text-white;
+	@include hasError();
+}
+
+.radioContainer {
+	@apply w-full relative;
+
+	.radioButtons {
+		@include inputLabelWidth();
+
+		.radio {
+			@apply w-4 h-4 bg-gray-100 border-gray-300 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600;
+
+			&.primary {
+				@apply text-blue-600 focus:ring-blue-500 dark:focus:ring-blue-600;
+			}
+
+			&.success {
+				@apply text-green-600 focus:ring-green-500 dark:focus:ring-green-600;
+			}
+
+			&.danger {
+				@apply text-red-600 focus:ring-red-500 dark:focus:ring-red-600;
+			}
+
+			&.warning {
+				@apply text-yellow-600 focus:ring-yellow-500 dark:focus:ring-yellow-600;
+			}
+
+			&.info {
+				@apply text-sky-600 focus:ring-sky-500 dark:focus:ring-sky-600;
+			}
+		}
+
+		.radioLabel {
+			@apply ml-2 text-sm text-gray-900 dark:text-gray-300;
+		}
+	}
+
+	.errorMessage {
+		@apply absolute;
+		@apply text-sm;
+		@include hasError();
+	}
+}
+
+// layout styling
+.horizontal {
+	@apply flex items-start mb-2;
+
+	&.error {
+		@apply mb-6;
+	}
+
+	.label {
+		@apply text-right mr-2;
+		@include inputLabelWidth();
+	}
+
+	.radioContainer {
+		.radioButtons {
+			@include inputLabelWidth();
+		}
+	}
+}
+
+.vertical {
+	&.error {
+		@apply mb-6;
+	}
+}

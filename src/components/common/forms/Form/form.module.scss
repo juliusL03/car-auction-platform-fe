@@ -1,0 +1,63 @@
+@import '../../../../styles/mixins';
+
+.form {
+	.fieldsWrapper {
+		.fieldsContainer {
+			@apply flex gap-2;
+		}
+
+		&.horizontal {
+			@apply flex text-right;
+
+			.dummyLabel {
+				&.width-1 {
+					@apply w-[0px];
+				}
+
+				&.width-2 {
+					@apply w-[15px];
+				}
+
+				&.width-3 {
+					@apply w-[30px];
+				}
+
+				&.width-4 {
+					@apply w-[45px];
+				}
+
+				&.width-5 {
+					@apply w-[60px];
+				}
+
+				&.width-6 {
+					@apply w-[75px];
+				}
+
+				&.width-7 {
+					@apply w-[85px];
+				}
+
+				&.width-8 {
+					@apply w-[95px];
+				}
+
+				&.width-9 {
+					@apply w-[110px];
+				}
+
+				&.width-10 {
+					@apply w-[125px];
+				}
+
+				&.width-auto {
+					@apply w-full;
+				}
+			}
+		}
+
+		&.vertical {
+			@apply flex;
+		}
+	}
+}

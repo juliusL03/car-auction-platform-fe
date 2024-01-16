@@ -1,0 +1,43 @@
+.container {
+ @apply flex justify-center bg-white sm:rounded-xl md:rounded-none shadow;
+}
+
+.item {
+ @apply flex flex-col bg-white sm:rounded-xl md:rounded-none p-4;
+}
+
+.content {
+ @apply flex flex-col text-[20px] font-semibold px-4 m-2;
+}
+
+.title {
+ @apply font-semibold text-[25px] p-2 shadow
+}
+
+.hr {
+ @apply w-full text-orange-900;
+}
+
+.bidIncrement {
+ @apply flex flex-col pr-4 text-base text-[11px] text-gray-500 font-bold
+}
+
+.bidInput {
+ @apply flex flex-row w-full
+}
+
+.badge {
+ @apply m-0;
+}
+
+.img {
+ @apply flex shadow p-4;
+}
+
+.currentBid {
+ @apply text-[18px] font-bold text-green-500
+}
+
+.viewDetails {
+ @apply text-base text-white bg-blue-600 p-2 px-4 rounded m-1 hover:bg-blue-400 hover:text-white transition-all;
+}

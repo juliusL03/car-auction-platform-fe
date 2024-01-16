@@ -1,0 +1,11 @@
+.menu {
+ @apply flex flex-col;
+}
+
+.title {
+ @apply text-sm font-bold text-gray-900;
+}
+
+.link {
+ @apply text-sm ml-2;
+}

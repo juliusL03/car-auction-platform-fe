@@ -1,0 +1,33 @@
+.radioButton {
+	@apply flex items-center gap-2 mb-3 cursor-pointer border-2 border-gray-200 rounded-lg relative px-4 py-3 text-gray-950;
+
+	&.checked {
+		@apply outline outline-2 outline-primary bg-[#F9F5FF];
+	}
+
+	.icon {
+		@apply text-5xl text-gray-300;
+
+		&.checked {
+			@apply text-primary;
+		}
+	}
+
+	.radio {
+		@apply hidden;
+	}
+
+	.customRadio {
+		@apply inline-block w-5 h-5 border border-gray-400 rounded-xl absolute top-0 right-0 mr-2 mt-2;
+
+		&.checked {
+			@apply bg-primary  border-primary;
+
+			& svg {
+				transform: translate(-50%, -50%);
+
+				@apply absolute top-1/2 left-1/2 text-white text-xs;
+			}
+		}
+	}
+}

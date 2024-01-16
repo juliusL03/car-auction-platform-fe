@@ -1,0 +1,56 @@
+@import '../../../../styles/mixins';
+
+.label {
+	@apply block text-sm font-medium text-gray-900 dark:text-white;
+	@include hasError();
+}
+
+.selectContainer {
+	@apply w-full relative;
+
+	.select {
+		@apply outline-none block w-full text-sm  focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500;
+		-webkit-appearance: button;
+		-moz-appearance: button;
+		appearance: none;
+		background: url('/img/icons/arrow-down-icon.svg') no-repeat right 0.75rem center;
+		@include inputField();
+		@include rounded();
+		@include elementSizes();
+		@include elementStatus();
+	}
+
+	.errorMessage {
+		@apply absolute;
+		@apply text-sm;
+		@include hasError();
+	}
+}
+
+// layout styling
+.horizontal {
+	@apply flex items-center mb-2;
+
+	&.error {
+		@apply mb-6;
+	}
+
+	.label {
+		@apply text-right mr-2;
+		@include inputLabelWidth();
+	}
+
+	.selectContainer {
+		.select {
+			@include inputLabelWidth();
+		}
+	}
+}
+
+.vertical {
+	@apply flex flex-col mb-2;
+
+	&.error {
+		@apply mb-6;
+	}
+}

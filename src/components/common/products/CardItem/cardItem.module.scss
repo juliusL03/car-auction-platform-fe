@@ -1,0 +1,35 @@
+.items {
+ @apply flex flex-col bg-white w-40 mb-5 pb-2 hover:opacity-80 hover:border-red-400 hover:border;
+}
+
+.img {
+ @apply w-full;
+ }
+
+.content {
+  @apply flex flex-col ml-4 mr-4;
+ }
+
+.name {
+  @apply font-bold text-sm;
+ }
+
+.price {
+ @apply font-semibold text-red-400 text-base;
+ }
+
+ .discount {
+  @apply font-semibold text-green-700;
+  }
+
+  .oldPrice {
+   @apply font-semibold line-through text-sm;
+   }
+
+   .discountView {
+    @apply flex space-x-4;
+   }
+
+   .hoverOn {
+    @apply bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-[hsl(0,0%,98.4%,0.2)] bg-fixed opacity-0 transition duration-300 ease-in-out hover:opacity-100;
+   }

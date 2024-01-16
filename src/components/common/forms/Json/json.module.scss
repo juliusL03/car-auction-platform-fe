@@ -1,0 +1,17 @@
+@import '../../../../styles/mixins';
+
+.fieldsContainer {
+	@apply p-5 pl-0 pb-3 mb-3 rounded;
+}
+
+.horizontal {
+	@apply flex text-right w-full;
+
+	.fieldsContainer {
+		@apply w-full flex gap-4 text-left;
+	}
+}
+
+.vertical {
+	@apply flex;
+}

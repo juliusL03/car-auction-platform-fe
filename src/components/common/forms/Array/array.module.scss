@@ -1,0 +1,29 @@
+@import '../../../../styles/mixins';
+
+.fieldsContainer {
+	@apply border p-5 pl-0 pb-3 mb-3 rounded flex flex-col items-stretch;
+}
+
+.horizontal {
+	@apply flex text-right;
+
+	.fieldsContainer {
+		@apply w-full pl-4 flex;
+
+		.item {
+			@apply w-full flex items-start;
+
+			.itemInner {
+				@apply flex flex-1 pr-4;
+
+				.fieldsContainer {
+					@apply w-full;
+				}
+			}
+		}
+	}
+}
+
+.vertical {
+	@apply flex;
+}

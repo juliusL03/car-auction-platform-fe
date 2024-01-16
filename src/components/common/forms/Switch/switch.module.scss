@@ -1,0 +1,88 @@
+@import '../../../../styles/mixins';
+
+.container {
+	@apply relative w-full inline-flex items-center cursor-pointer mb-2;
+
+	&.error {
+		@apply mb-7;
+	}
+
+	.checkbox {
+		@apply sr-only;
+	}
+
+	.switch {
+		@apply bg-gray-200 rounded-full dark:bg-gray-700 after:content-[''] after:absolute after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600;
+
+		&.sm {
+			@apply w-9 h-5 after:top-[2px] after:left-[2px] after:h-4 after:w-4;
+		}
+
+		&.md {
+			@apply w-11 h-6 after:top-[2px] after:left-[2px] after:h-5 after:w-5;
+		}
+
+		&.lg {
+			@apply w-14 h-7 after:top-0.5 after:left-[4px] after:h-6 after:w-6;
+		}
+	}
+
+	.label {
+		@apply ml-3 text-sm font-medium text-gray-900 dark:text-gray-300;
+	}
+
+	.errorMessage {
+		@apply absolute text-sm left-0 -bottom-6;
+		@include hasError();
+	}
+}
+
+.horizontal {
+	@apply flex w-full;
+
+	.dummyLabel {
+		&.width-1 {
+			@apply w-[65px];
+		}
+
+		&.width-2 {
+			@apply w-[85px];
+		}
+
+		&.width-3 {
+			@apply w-[105px];
+		}
+
+		&.width-4 {
+			@apply w-[125px];
+		}
+
+		&.width-5 {
+			@apply w-[145px];
+		}
+
+		&.width-6 {
+			@apply w-[165px];
+		}
+
+		&.width-7 {
+			@apply w-[185px];
+		}
+
+		&.width-8 {
+			@apply w-[205px];
+		}
+
+		&.width-9 {
+			@apply w-[230px];
+		}
+
+		&.width-10 {
+			@apply w-[250px];
+		}
+
+		&.width-auto {
+			@apply w-full;
+		}
+	}
+}

@@ -1,0 +1,60 @@
+@import '../../../../styles/_mixins';
+
+.label {
+	@apply block text-sm font-medium;
+	@include hasError();
+}
+
+.inputContainer {
+	@apply w-full relative flex flex-col items-start;
+
+	.input {
+		@apply outline-none w-full flex bg-gray-50 border border-gray-300 focus:ring-blue-500 focus:border-blue-500;
+
+		@include inputField();
+		@include rounded();
+		@include elementSizes();
+		@include elementStatus();
+	}
+
+	.errorMessage {
+		@apply text-sm;
+		@include hasError();
+	}
+
+	:global {
+		.ant-input-affix-wrapper {
+			.ant-input-prefix, .ant-input-suffix {
+				@apply text-gray-300;
+			}
+		}
+	}
+}
+
+// layout styling
+.horizontal {
+	@apply flex items-center my-0;
+
+	&.error {
+		@apply mb-4;
+	}
+
+	.label {
+		@apply text-right mr-2;
+		@include inputLabelWidth();
+	}
+
+	.inputContainer {
+		.input {
+			@include inputLabelWidth();
+		}
+	}
+}
+
+.vertical {
+	@apply flex flex-col mb-2;
+
+	&.error {
+		@apply mb-2;
+	}
+}

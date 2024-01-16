@@ -1,0 +1,117 @@
+@mixin rounded() {
+	@apply rounded-lg;
+
+	&.rounded {
+		@apply rounded-full;
+	}
+}
+
+@mixin avatarSizes() {
+	&.xs {
+		@apply w-6 h-6;
+	}
+
+	&.sm {
+		@apply w-8 h-8;
+	}
+
+	&.md {
+		@apply w-10 h-10;
+	}
+
+	&.lg {
+		@apply w-20 h-20;
+	}
+
+	&.xl {
+		@apply w-36 h-36;
+	}
+}
+
+@mixin elementSizes() {
+	&.xs {
+		@apply px-3 py-2 text-xs;
+	}
+
+	&.sm {
+		@apply px-3 py-2 text-sm;
+	}
+
+	&.md {
+		@apply px-5 py-2.5 text-sm;
+	}
+
+	&.lg {
+		@apply px-5 py-3 text-base;
+	}
+
+	&.xl {
+		@apply px-6 py-3.5 text-base;
+	}
+}
+
+@mixin hasError() {
+	&.error {
+		@apply text-red-700 dark:text-red-500;
+	}
+}
+
+@mixin elementStatus() {
+	&.success {
+		@apply bg-green-50 border border-green-500 text-green-900 dark:text-green-400 placeholder-green-700 dark:placeholder-green-500 text-sm focus:ring-green-500 focus:border-green-500 block w-full dark:bg-gray-700 dark:border-green-500;
+	}
+
+	&.error {
+		@apply bg-red-50 border border-red-500 text-red-900 placeholder-red-700 focus:ring-red-500 dark:bg-gray-700 focus:border-red-500 w-full dark:text-red-500 dark:placeholder-red-500 dark:border-red-500;
+	}
+}
+
+@mixin inputField() {
+	@apply bg-white border border-gray-300 text-gray-900;
+}
+
+@mixin inputLabelWidth() {
+	&.width-1 {
+		@apply w-[60px];
+	}
+
+	&.width-2 {
+		@apply w-[80px];
+	}
+
+	&.width-3 {
+		@apply w-[100px];
+	}
+
+	&.width-4 {
+		@apply w-[120px];
+	}
+
+	&.width-5 {
+		@apply w-[140px];
+	}
+
+	&.width-6 {
+		@apply w-[160px];
+	}
+
+	&.width-7 {
+		@apply w-[180px];
+	}
+
+	&.width-8 {
+		@apply w-[200px];
+	}
+
+	&.width-9 {
+		@apply w-[220px];
+	}
+
+	&.width-10 {
+		@apply w-[240px];
+	}
+
+	&.width-auto {
+		@apply w-full;
+	}
+}

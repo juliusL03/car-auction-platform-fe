@@ -1,0 +1,27 @@
+.container {
+ @apply flex md:flex-col w-full bg-white sm:rounded-xl md:rounded-none shadow m-2;
+}
+
+.content {
+ @apply flex flex-col justify-center items-center text-[14px] font-semibold;
+}
+
+.title {
+ @apply font-semibold md:text-[18px] p-2
+}
+
+.badge {
+ @apply m-2 absolute;
+}
+
+.img {
+ @apply flex justify-center items-center shadow p-2;
+}
+
+.currentBid {
+ @apply text-[18px] font-bold text-green-500
+}
+
+.viewDetails {
+ @apply text-base text-white bg-blue-600 p-2 px-4 rounded m-1 hover:bg-blue-400 hover:text-white transition-all;
+}

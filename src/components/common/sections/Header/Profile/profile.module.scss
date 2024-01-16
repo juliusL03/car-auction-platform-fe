@@ -1,0 +1,19 @@
+.profile {
+	@apply flex text-sm font-semibold border-t-2 py-4;
+
+	.userAvatar {
+		@apply mr-4;
+	}
+
+	.userDetails {
+		@apply flex flex-col;
+
+		.userEmail {
+			@apply text-gray-500 font-normal;
+		}
+	}
+}
+
+.space {
+ @apply pr-4;
+}

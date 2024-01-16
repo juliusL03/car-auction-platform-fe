@@ -1,0 +1,66 @@
+@import '../../../../styles/_mixins';
+
+.label {
+	@apply block text-sm font-medium text-gray-900 dark:text-white;
+	@include hasError();
+}
+
+.inputContainer {
+	@apply w-full relative flex flex-col items-start;
+
+	.input {
+		@apply outline-none w-full flex bg-gray-50 border border-gray-300 text-gray-900 text-sm  focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500;
+
+		@include inputField();
+		@include rounded();
+		@include elementSizes();
+		@include elementStatus();
+	}
+
+	.errorMessage {
+		@apply text-sm;
+		@include hasError();
+	}
+}
+
+// layout styling
+.horizontal {
+	@apply flex items-center my-4 w-full;
+
+	&.error {
+		@apply mb-6;
+	}
+
+	.label {
+		@apply text-right mr-2;
+		@include inputLabelWidth();
+	}
+
+	.inputContainer {
+		.input {
+			@include inputLabelWidth();
+		}
+	}
+}
+
+.vertical {
+	@apply flex flex-col mb-2;
+
+	&.error {
+		@apply mb-6;
+	}
+}
+
+.reverseIcon * {
+	:global {
+		.ant-picker-input {
+			flex-direction: row-reverse;
+		}
+		
+		span.ant-picker-suffix {
+			@apply text-gray-300;
+			margin-left: 0;
+			margin-right: 10px;
+		}
+	}
+}
