@@ -1,5 +1,10 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+## Rest API BackEnd repo
+This repository contains the code for a RESTful web service that provides access to data stored in a car auction platform
+
+https://github.com/juliusL03/car-auction-platform-be
+
 ## Getting Started
 
 First, run the development server:
