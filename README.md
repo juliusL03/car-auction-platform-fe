@@ -1,9 +1,19 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+## Architecture diagram
+https://drive.google.com/drive/folders/10JA_u3j15NPi0HwU-aB8rmfTHV32ZpD0?usp=sharing
+
 ## Rest API BackEnd repo
 This repository contains the code for a RESTful web service that provides access to data stored in a car auction platform
 
 https://github.com/juliusL03/car-auction-platform-be
+
+## Node version 18.18.0
+```bash
+nvm install 18.18.0
+# or
+nvm use 18.18.0
+```
 
 ## Getting Started
 
