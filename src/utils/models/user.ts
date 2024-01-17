@@ -15,14 +15,13 @@ export type TOrganizationData = {
 
 export type TUserData = {
 	_id: string
-	first_name: string
-	last_name: string
+	full_name: string
+	phone_number: string
 	email: string
-	age: number
-	gender: string
 	password: string
 	confirm_password: string
 	deleted_at: string
 	created_at: string
 	updated_at: string
+ admin: string
 }

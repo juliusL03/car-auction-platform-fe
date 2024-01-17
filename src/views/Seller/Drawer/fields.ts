@@ -3,7 +3,7 @@ import {FieldTypes, TField} from '@/forms/types'
 export const fields: TField[] = [
 	{
 		type: FieldTypes.TEXT,
-		name: 'model',
+		name: 'brand_name',
 		placeholder: '',
 		label: 'Car Brand',
 		required: true,
@@ -53,7 +53,7 @@ export const fields: TField[] = [
 	},
 	{
 		type: FieldTypes.TEXT,
-		name: 'startBid',
+		name: 'start_bid',
 		placeholder: '',
 		label: 'Opening Bid',
 		required: true,
@@ -63,7 +63,7 @@ export const fields: TField[] = [
 	},
 	{
 		type: FieldTypes.DATE,
-		name: 'expired',
+		name: 'expiry_date',
 		placeholder: '',
 		label: 'Expired date',
 		required: true,

@@ -1,3 +1,5 @@
 export type ItemProps = {
-	id: string | null
+	setValue: any,
+ value: any,
+ currentBid: string | undefined
 }

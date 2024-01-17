@@ -31,7 +31,6 @@ export const MegaMenu: React.FC<MegaProps> = ({options, name}) => {
 	useEffect(() => {
 		if (!showDropdown) return
 		function handleClick(event: { target: any }) {
-			console.log('shown::', dropDown)
 			if (dropDown.current) {
 				setShowDropdown(true)                                                                                                                                                                                                       
 			}

@@ -2,4 +2,14 @@
  @apply flex flex-col justify-center bg-white sm:rounded-xl md:rounded-none shadow py-5;
 }
 
+.stopBtn {
+ @apply p-3 bg-red-600 text-white rounded shadow hover:bg-red-400 transition-all;
+}
 
+.startBtn {
+ @apply p-3 bg-green-600 text-white rounded shadow hover:bg-green-400 transition-all;
+}
+
+.arcieve {
+ @apply p-3 bg-orange-700 text-white rounded shadow hover:bg-orange-500 transition-all;
+}

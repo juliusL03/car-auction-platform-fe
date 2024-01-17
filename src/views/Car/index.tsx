@@ -7,6 +7,7 @@ import CarInfo from './CarInfo'
 
 const Car: NextPage = () => {
 	const searchParams = useSearchParams()
+
 	return (
 		<MainNav>
 			<CarInfo id={searchParams.get('id')}/>

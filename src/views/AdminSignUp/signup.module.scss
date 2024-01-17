@@ -1,0 +1,27 @@
+.container {
+ @apply flex-col w-[480px] text-gray-900 bg-white p-10 m-20 shadow;
+}
+
+.logoImg {
+ @apply h-9 w-9 mr-2 text-[#FF5B22];
+}
+
+.hr {
+ @apply w-full text-orange-900;
+}
+
+.signUp{
+ @apply text-white bg-[#FF5B22] hover:bg-[#FF9130] focus:ring-sky-500 rounded m-2 pr-2 pl-6 pb-4 w-full;
+}
+
+.logo {
+ @apply flex p-4 text-[#FF5B22] font-semibold;
+}
+
+.logoName {
+ @apply text-gray-900 text-2xl;
+}
+
+.screen {
+ @apply w-screen flex justify-center items-center
+}

@@ -2,6 +2,9 @@ import clsx from 'clsx'
 import {Badge, Table} from 'antd'
 import type {TableProps} from 'antd'
 import Link from 'next/link'
+import {useEffect} from 'react'
+
+import useLogic from '../useLogic'
 
 import styles from './tableList.module.scss'
 
@@ -36,7 +39,7 @@ const columns: TableProps<DataType>['columns'] = [
 		key: 'status',
 		dataIndex: 'status',
 		render: (tag) => (
-			<Badge count={tag} style={{backgroundColor: '#52c41a'}}/>
+			<Badge count={tag} style={tag === 'active' ? {backgroundColor: '#52c41a'} : {backgroundColor: '#EB1E2B'}}/>
 		),
 	},
 	{
@@ -54,41 +57,29 @@ const columns: TableProps<DataType>['columns'] = [
 	}
 ]
 
-const data: DataType[] = [
-	{
-		key: '2',
-		productName: '2x Honda xyz',
-		bid: '$ 110.00',
-		currentBid: '$ 110.00',
-		productId: '2',
-		expired: '01/23/2024',
-		status: 'active'	
-	},
-	{
-		key: '3',
-		productName: 'ford xyz',
-		bid: '$ 120.00',
-		currentBid: '$ 210.00',
-		productId: '3',
-		expired: '01/24/2024',
-		status: 'active'
-	},
-	{
-		key: '1',
-		productName: 'Honda xyz',
-		bid: '$ 120.00',
-		currentBid: '$ 120.00',
-		productId: '1',
-		expired: '01/25/2024',
-		status: 'active'
-	},
-]
-
-
 const TableList: React.FC = () => {
+	const {getBidList, user, bids} = useLogic()
+
+	useEffect(() => {
+		getBidList({
+			page: 1, limit: 10,
+			user_id: user?._id
+		})
+	}, [getBidList, user?._id])
+
+	const listData = bids.map((list, index) => ({
+		key: index,
+		productName: list.product.brand_name,
+		bid: list.amount,
+		currentBid: list.product.current_bid,
+		productId: list.product_id,
+		expired: list.product.expiry_date,
+		status: list.product.status
+	}))
+
 	return (
 		<div className={clsx(styles.container)}>
-			<Table columns={columns} dataSource={data} />
+			<Table columns={columns} dataSource={listData} />
 		</div>
 	)
 }

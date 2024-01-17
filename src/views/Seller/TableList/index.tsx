@@ -1,5 +1,6 @@
+/* eslint-disable sonarjs/no-use-of-empty-return-value */
 import clsx from 'clsx'
-import {Space, Table} from 'antd'
+import {Badge, Space, Table} from 'antd'
 import type {TableProps} from 'antd'
 import {useState} from 'react'
 
@@ -8,113 +9,93 @@ import Button from '@/components/common/elements/Button'
 import DrawerRight from '../Drawer'
 
 import styles from './tableList.module.scss'
+import useLogic from './useLogic'
 
 interface DataType {
- key: string;
- brand: string;
- year: string;
- color: string;
- mileage: string;
- status: string;
- openingBid: string;
- currentBid: string;
- expired: string;
+ brand_name: string
+ year: string
+ color: string
+ mileage: string
+ status: string
+ start_bid: string
+ current_bid: string
+ expiry_date: string
  productId: string
+ user_id: string
+ _id: string
 }
-
-const columns: TableProps<DataType>['columns'] = [
-	{
-		title: 'Car Brand',
-		dataIndex: 'brand',
-		key: 'brand',
-		render: (text) => <a>{text}</a>,
-	},
-	{
-		title: 'Year',
-		dataIndex: 'year',
-		key: 'year',
-	},
-	{
-		title: 'Mileage',
-		dataIndex: 'mileage',
-		key: 'mileage',
-	},
-	{
-		title: 'Color',
-		dataIndex: 'color',
-		key: 'color',
-	},
-	{
-		title: 'status',
-		dataIndex: 'status',
-		key: 'status',
-	},
-	{
-		title: 'Opening Bid',
-		dataIndex: 'openingBid',
-		key: 'openingBid',
-	},
-	{
-		title: 'Current Bids',
-		dataIndex: 'currentBid',
-		key: 'currentBid',
-	},
-	{
-		title: 'expired',
-		dataIndex: 'expired',
-		key: 'expired',
-	},
-	{
-		title: 'Action',
-		dataIndex: 'productId',
-		key: 'productId',
-		render: (id) => (
-			<Space size="middle">
-				<button>Update - {id}</button>
-				<button>Achieve</button>
-			</Space>
-		),
-	},
-]
-
-const data: DataType[] = [
-	{
-		key: '1',
-		brand: 'Honda xyz',
-		year: '2025',
-		color: 'white',
-		mileage: '33000',
-		status: 'active',
-		openingBid: '100',
-		currentBid: '300',
-		expired: '01/23/2024',
-		productId: '1'
-	},
-	{
-		key: '2',
-		brand: 'Ford xyz',
-		year: '2025',
-		color: 'red',
-		mileage: '3000',
-		status: 'active',
-		openingBid: '200',
-		currentBid: '300',
-		expired: '01/25/2024',
-		productId: '2'
-	},
-]
-
 
 const TableList: React.FC = () => {
 	const [open, setOpen] = useState(false)
 
+	const {products, user, stopBid, archiveBid} = useLogic()
+
 	const showDrawer = () => {
 		setOpen(true)
 	}
+
+	const columns: TableProps<DataType>['columns'] = [
+		{
+			title: 'Car Brand',
+			dataIndex: 'brand_name',
+			key: 'brand',
+			render: (text) => <a>{text}</a>,
+		},
+		{
+			title: 'Year',
+			dataIndex: 'year',
+			key: 'year',
+		},
+		{
+			title: 'Mileage',
+			dataIndex: 'mileage',
+			key: 'mileage',
+		},
+		{
+			title: 'Color',
+			dataIndex: 'color',
+			key: 'color',
+		},
+		{
+			title: 'status',
+			dataIndex: 'status',
+			key: 'status',
+			render: (tag) => (
+				<Space size="middle">
+					<Badge count={tag} style={tag === 'active' ? {backgroundColor: '#52c41a'} : {backgroundColor: '#EB1E2B'}}/>
+				</Space>
+			),
+		},
+		{
+			title: 'Opening Bid',
+			dataIndex: 'start_bid',
+			key: 'openingBid',
+		},
+		{
+			title: 'Current Bids',
+			dataIndex: 'current_bid',
+			key: 'currentBid',
+		},
+		{
+			title: 'expired',
+			dataIndex: 'expiry_date',
+			key: 'expired',
+		},
+		{
+			title: 'Action',
+			key: '_id',
+			render: (payload) => (
+				<Space size="middle">
+					{user?._id ? <span className={payload.status === 'active' ? styles.stopBtn : styles.startBtn} onClick={() => stopBid(payload)}>{payload.status === 'active' ? 'Stop' : 'Start'}</span> : ''}
+					{user?.admin ? <span className={styles.stopBtn} onClick={() => archiveBid(payload)}>Achieve</span> : ''}
+				</Space>
+			),
+		},
+	]
 	return (
 		<div className={clsx(styles.container)}>
 			<div><Button onClick={showDrawer}>Add New</Button></div>
-			<Table columns={columns} dataSource={data} />
+			<Table columns={columns} dataSource={products} />
 			<DrawerRight setOpen={setOpen} open={open} />
 		</div>
 	)

@@ -3,11 +3,15 @@ import {devtools} from 'zustand/middleware'
 
 import authSlice, {type TAuthSlice} from '@/store/slices/auth'
 
-export type TUseAppStore = TAuthSlice 
+import productSlice, {type TProductSlice} from './slices/product'
+import bidSlice, {type TBidSlice} from './slices/bid'
 
+export type TUseAppStore = TAuthSlice & TProductSlice & TBidSlice
 const useStore = create<TUseAppStore>()(
 	devtools((...a) => ({
-		...authSlice(...a)
+		...authSlice(...a),
+		...productSlice(...a),
+		...bidSlice(...a)
 	}))
 )
 

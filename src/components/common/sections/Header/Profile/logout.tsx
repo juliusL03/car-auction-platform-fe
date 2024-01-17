@@ -9,9 +9,10 @@ const Logout = () => {
 	const {NotificationContextHolder, openNotification} = useNotification()
 	const [authenticating, setAuthenticating] = useState(false)
 
-	const {logout, authenticated} = useStore ((state) => ({
+	const {logout, authenticated, user} = useStore ((state) => ({
 		logout: state.logout,
-		authenticated: state.authenticated
+		authenticated: state.authenticated,
+		user: state.user
 	}))
 
 	useEffect(() => {
@@ -35,7 +36,7 @@ const Logout = () => {
 		<label onClick={outHandler}>Logout</label>
 	</Fragment>
 
-	return {Logout, NotificationContextHolder}
+	return {Logout, NotificationContextHolder, user}
 
 
 }

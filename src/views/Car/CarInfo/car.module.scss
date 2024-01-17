@@ -41,3 +41,11 @@
 .viewDetails {
  @apply text-base text-white bg-blue-600 p-2 px-4 rounded m-1 hover:bg-blue-400 hover:text-white transition-all;
 }
+
+.signIn {
+ @apply w-full shadow text-center bg-orange-500 text-white p-2 rounded hover:text-white hover:bg-orange-400;
+}
+
+.arrow {
+ @apply ml-3;
+}
