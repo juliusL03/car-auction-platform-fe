@@ -2,9 +2,9 @@
  @apply bg-white w-full relative overflow-hidden;
 }
 
-.navHeight {
- @apply sm:h-full sm:absolute md:h-auto md:relative sm:w-full sm:transition-all;
-}
+// .navHeight {
+//  @apply sm:h-full sm:absolute md:h-auto md:relative sm:w-full sm:transition-all;
+// }
 
 .navWrapper {
  @apply md:mx-auto border-b-2 border-solid border-0 border-[#c9c8c82c];

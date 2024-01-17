@@ -1,5 +1,7 @@
 export const menuItems = [
-	{name: 'Services', link: '#', type: ''},
-	{name: 'About', link: '#', type: ''},
-	{name: 'Developer', link: '/developer', type: ''}
+	{name: 'Auction', link: '/', type: ''},
+	{name: 'My bid', link: '/mybid', type: ''},
+	{name: 'Seller', link: '/seller', type: ''},
+	{name: 'Sign In', link: '/signin', type: ''},
+	{name: 'Sign Up', link: '/signup', type: ''}
 ]
